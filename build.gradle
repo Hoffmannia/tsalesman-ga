@@ -1,0 +1,39 @@
+// build with either gradle build or ./gradlew build
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = 'drivers.Driver'
+
+// tag::repositories[]
+repositories {
+    mavenCentral()
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    baseName = 'tsalesman-ga'
+    version = '0.1.0'
+}
+// end::jar[]
+
+//tag dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// dependencies would go here
+// end::dependencies[]
+
+run {
+    if(System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+}
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+// end::wrapper[]
