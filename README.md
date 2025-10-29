@@ -1,5 +1,3 @@
-Author: jhoffm12
-
 <h1>Overview</h1>
 This project is a basic implementation of a genetic algorithm to find a close-to-optimized solution
 to the classic Traveling Salesman Problem (TSP). It is well-known that optimization version of the TSP is NP-hard
